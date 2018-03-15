@@ -1,0 +1,7 @@
+{
+  "name": "Node.js Chatbot",
+  "description": "Chatbot Node.js app using Express 4",
+  "repository": "https://github.com/srinivasmeenavalli/chatbotai.git",
+  "logo": "",
+  "keywords": ["Chatbot", "express", "static"]
+}

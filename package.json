@@ -1,0 +1,30 @@
+{
+  "name": "ChatBot",
+  "version": "0.2.0",
+  "description": "ChatBot Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "ssl-root-cas": "^1.2.5"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srinivasmeenavalli/chatbotai.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Srinivas Meenaalli",
+  "contributors": [
+    "Srinivasa Meenavalli <srinivasmeenavalli@gmail.com>"
+  ],
+  "license": "MIT"
+}
