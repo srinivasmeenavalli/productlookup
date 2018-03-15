@@ -45,13 +45,11 @@ function getCall(req, res, callback) {
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 
   const https = require("https");
-  //const url =
-    //"https://btm-atg-jst-prd.ascenaretail.com/rest/model/com/ascena/rest/actor/ProductActor/itemDetails?productId=7771399&stockonHandFilter=true ";
-
+  
   // options
   var options = {
-    host: 'btm-atg-jst-prd.ascenaretail.com',
-    path: '/rest/model/com/ascena/rest/actor/ProductActor/itemDetails?productId=7771399&stockonHandFilter=true'
+    host: '',
+    path: ''
   }
 
   https.get(options, res => {
