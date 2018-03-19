@@ -31,16 +31,26 @@ restService.post("/webhook", function (req, res) {
       var promoText = result.contents[0].HeaderContent[0].contents[0].contents[0].contents[0].freeFormContent;
       console.log(promoText);
       return res.json({
-        "messages": [
-          {
-            "attachment": {
-              "type": "video",
-              "payload": {
+        "data": {
+          "facebook": {
+              "text": "Pick a color:",
+              "quick_replies": [
+                  {
+                      "content_type": "text",
+                      "title": "Red",
+                       "payload": {
                 "url": "https://rockets.chatfuel.com/assets/video.mp4"
               }
-            }
+                  },
+                  {
+                      "content_type": "text",
+                      "title": "Green",
+                      "payload": "green"
+                  }
+              ]
           }
-        ]
+      }
+	  
       });
     }
   });
