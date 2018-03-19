@@ -38,7 +38,7 @@ restService.post("/webhook", function (req, res) {
                   "type": "template",
                   "payload": {
                       "template_type": "list",
-                      "elements": promoText
+                      "elements": "Hello world"
                   }
               }
           }
