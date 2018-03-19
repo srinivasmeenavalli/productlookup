@@ -29,10 +29,10 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": "Here are the Product Recommendations1",
+        "speech": "",
         "messages": [
           {
-            "type": 0,
+            "type": 1,
             "platform": "facebook",
             "title": "This is a card",
             "subtitle": "This is a card subtitle",
@@ -47,6 +47,10 @@ restService.post("/webhook", function (req, res) {
                 "postback": "postback 2"
               }
             ]
+          },
+          {
+            "type": 0,
+            "speech": ""
           }
         ]
       });
