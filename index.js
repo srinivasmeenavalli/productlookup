@@ -32,53 +32,16 @@ restService.post("/webhook", function (req, res) {
       console.log(promoText);
       return res.json({
         "messages": [
-           {
-             "attachment":{
-               "type":"template",
-               "payload":{
-                 "template_type":"list",
-                 "top_element_style":"large",
-                 "elements":[
-                   {
-                     "title":"Classic White T-Shirt",
-                     "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
-                     "subtitle":"Soft white cotton t-shirt is back in style",
-                     "buttons ":[
-                       {
-                         "type":"web_url",
-                         "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
-                         "title":"View Item"
-                       },
-                       {
-                        "type":"web_url",
-                        "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
-                        "title":"View Item"
-                      }
-                     ]
-                   },
-                   {
-                     "title":"Classic Grey T-Shirt",
-                     "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
-                     "subtitle":"Soft gray cotton t-shirt is back in style",
-                     "buttons":[
-                       {
-                         "type":"web_url",
-                         "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
-                         "title":"View Item"
-                       },
-                       {
-                        "type":"web_url",
-                        "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
-                        "title":"View Item"
-                      }
-                     ]
-                   }
-                 ]
-               }
-             }
-           }
-         ]
-       });
+          {
+            "attachment": {
+              "type": "video",
+              "payload": {
+                "url": "https://rockets.chatfuel.com/assets/video.mp4"
+              }
+            }
+          }
+        ]
+      });
     }
   });
 
