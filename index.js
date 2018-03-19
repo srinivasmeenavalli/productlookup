@@ -28,22 +28,19 @@ restService.post("/webhook", function (req, res) {
   getCall(req, res, function (result) {
     if (result) {
       console.log("result" + result.templateTypes);
+      var promoText = result.contents[0].HeaderContent[0].contents[0].contents[0].contents[0].freeFormContent;
+      
       return res.json({
+      
         "data": {
           "facebook": {
-              "text": "Pick a color:",
-              "quick_replies": [
-                  {
-                      "content_type": "text",
-                      "title": "Red",
-                      "payload": "red"
-                  },
-                  {
-                      "content_type": "text",
-                      "title": "Green",
-                      "payload": "green"
+              "attachment": {
+                  "type": "template",
+                  "payload": {
+                      "template_type": "list",
+                      "elements": promoText
                   }
-              ]
+              }
           }
       }
        
