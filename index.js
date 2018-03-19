@@ -34,13 +34,13 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
-            "title": "This is a card",
-            "subtitle": "This is a card subtitle",
-            "imageUrl": "https://card.com/this-is-a-card",
+            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
+            "subtitle": "Product Recommendations",
+            "imageUrl": "https://www.lanebryant.com/home",
             "buttons": [
               {
                 "text": "Button 1",
-                "postback": "postback 1"
+                "postback": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$"
               },
               {
                 "text": "Button 2",
