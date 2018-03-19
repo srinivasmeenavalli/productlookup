@@ -29,48 +29,24 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": "",
-        "messages": [
-            {
-                "type": 0,
-                "platform": "facebook",
-                "payload": {
-                    "facebook": {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [
-                                    {
-                                        "title":"WelcometoPeter'\''sHats",
-                                        "image_url":"https://petersfancybrownhats.com/company_image.png",
-                                        "subtitle":"We'\''vegottherighthatforeveryone.",
-                                        "default_action": {
-                                            "type":"web_url",
-                                            "url":"https://peterssendreceiveapp.ngrok.io/view?item=103",
-                                            "webview_height_ratio":"tall",
-                                            "fallback_url":"https://peterssendreceiveapp.ngrok.io/"
-                                        },
-                                        "buttons": [
-                                            {
-                                                "type":"web_url",
-                                                "url":"https://petersfancybrownhats.com",
-                                                "title":"ViewWebsite"
-                                            },
-                                            {
-                                                "type":"postback",
-                                                "title":"StartChatting",
-                                                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        ]
+        "data": {
+          "facebook": {
+              "text": "Pick a color:",
+              "quick_replies": [
+                  {
+                      "content_type": "text",
+                      "title": "Red",
+                      "payload": "red"
+                  },
+                  {
+                      "content_type": "text",
+                      "title": "Green",
+                      "payload": "green"
+                  }
+              ]
+          }
+      }
+       
       });
     }
   });
