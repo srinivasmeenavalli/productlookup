@@ -22,26 +22,17 @@ restService.post("/webhook", function (req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   //let action = req.body.result.action; 
-  console.log('action='+req);  
+  //console.log('action='+action);  
   var parameters = req.body.json;
   var result = "";
   getCall(req, res, function (result) {
     if (result) {
-      console.log("templateTypes=" + result.templateTypes);
+      console.log("result" + result.templateTypes);
       return res.json({
-        "data": {
-          "facebook": {
-              "attachment": {
-                  "type": "template",
-                  "payload": {
-                      "template_type": "list",
-                      "elements": result.contents
-                  }
-              }
-          }
-      }
-
-             
+        "speech": result.contents,
+        "displayText": result.contents,
+        "source": "apiai-onlinestore-search"
+                
       });
     }
   });
