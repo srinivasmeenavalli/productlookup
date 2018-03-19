@@ -21,8 +21,6 @@ restService.post("/webhook", function (req, res) {
       req.body.result.parameters.echoText
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
-  //let action = req.body.result.action; 
-  //console.log('action='+action);  
   var parameters = req.body.json;
   var result = "";
   getCall(req, res, function (result) {
