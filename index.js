@@ -31,27 +31,50 @@ restService.post("/webhook", function (req, res) {
       return res.json({
         "speech": "",
         "messages": [
-          {
-            "type": 1,
-            "platform": "facebook",
-            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
-            "subtitle": "Product Recommendations",
-            "imageUrl": "https://www.lanebryant.com/content/real-women-dollars?intid=ct_shoes_b1_RWDredeem_20180316",
-            "buttons": [
-              {
-                "text": "Button 1",
-                "postback": "postback 1"
-              },
-              {
-                "text": "Button 2",
-                "postback": "postback 2"
-              }
-            ]
-          },
-          {
-            "type": 0,
-            "speech": ""
-          }
+            {
+                "type": 0,
+                "platform": "facebook",
+                "speech": "Here are the search results:"
+            },
+            {
+                "type": 4,
+                "platform": "facebook",
+                "payload": {
+                    "facebook": {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [
+                                    {
+                                        "title":"WelcometoPeter'\''sHats",
+                                        "image_url":"https://petersfancybrownhats.com/company_image.png",
+                                        "subtitle":"We'\''vegottherighthatforeveryone.",
+                                        "default_action": {
+                                            "type":"web_url",
+                                            "url":"https://peterssendreceiveapp.ngrok.io/view?item=103",
+                                            "webview_height_ratio":"tall",
+                                            "fallback_url":"https://peterssendreceiveapp.ngrok.io/"
+                                        },
+                                        "buttons": [
+                                            {
+                                                "type":"web_url",
+                                                "url":"https://petersfancybrownhats.com",
+                                                "title":"ViewWebsite"
+                                            },
+                                            {
+                                                "type":"postback",
+                                                "title":"StartChatting",
+                                                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
         ]
       });
     }
