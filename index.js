@@ -29,8 +29,8 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": result.contents,
-        "displayText": result.contents,
+        "speech": " Ascena Product Recommendations",
+        "displayText": " Ascena Product Recommendations",
         "source": "apiai-onlinestore-search"
                 
       });
