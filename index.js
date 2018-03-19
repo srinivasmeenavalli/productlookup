@@ -43,7 +43,7 @@ restService.post("/webhook", function (req, res) {
                      "title":"Classic White T-Shirt",
                      "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
                      "subtitle":"Soft white cotton t-shirt is back in style",
-                     "buttons":[
+                     "button":[
                        {
                          "type":"web_url",
                          "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
@@ -55,7 +55,7 @@ restService.post("/webhook", function (req, res) {
                      "title":"Classic Grey T-Shirt",
                      "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
                      "subtitle":"Soft gray cotton t-shirt is back in style",
-                     "buttons":[
+                     "button":[
                        {
                          "type":"web_url",
                          "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
