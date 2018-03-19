@@ -31,30 +31,44 @@ restService.post("/webhook", function (req, res) {
       var promoText = result.contents[0].HeaderContent[0].contents[0].contents[0].contents[0].freeFormContent;
       console.log(promoText);
       return res.json({
-
-        "data": {
-          "facebook": {
-            "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "list",
-                "elements": [
-                  {
-                    "title": "Hello world",
-                    "image_url": "https://xvir.github.io/img/apiai.png",
-                    "subtitle": "See all our colors",
-                    "default_action": {
-                      "type": "web_url",
-                      "url": "https://xvir.github.io/"
-
-                    }
-                  }]
-              }
-            }
-          }
-        }
-
-      });
+        "messages": [
+           {
+             "attachment":{
+               "type":"template",
+               "payload":{
+                 "template_type":"list",
+                 "top_element_style":"large",
+                 "elements":[
+                   {
+                     "title":"Classic White T-Shirt",
+                     "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                     "subtitle":"Soft white cotton t-shirt is back in style",
+                     "buttons":[
+                       {
+                         "type":"web_url",
+                         "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
+                         "title":"View Item"
+                       }
+                     ]
+                   },
+                   {
+                     "title":"Classic Grey T-Shirt",
+                     "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                     "subtitle":"Soft gray cotton t-shirt is back in style",
+                     "buttons":[
+                       {
+                         "type":"web_url",
+                         "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
+                         "title":"View Item"
+                       }
+                     ]
+                   }
+                 ]
+               }
+             }
+           }
+         ]
+       });
     }
   });
 
