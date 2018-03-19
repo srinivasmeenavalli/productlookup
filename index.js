@@ -29,71 +29,44 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "facebook": {
-          "attachment": {
-            "type": "template",
-            "payload": {
-              "template_type": "generic",
-              "elements": [
-                {
-                  "title": "Smurfs: The Lost Village (2017)",
-                  "image_url": "https://www.moovrika.com/ext/makeimg.php?tbl=movies&id=15666&img=1&type=image&movie=Smurfs+The+Lost+Village&fs=400",
-                  "subtitle": "Smurfette attempts to find her purpose in the village. When she encounters a creature in the Forbidden Forest who drops a mysterious map, she sets off with her friends Brainy, Clumsy, and Hefty on an adventure to find the Lost Village before the evil wizard Gargamel does.",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://www.moovrika.com/m/15666",
-                    "webview_height_ratio": "tall"
-                  },
-                  "buttons": [
-                    {
-                      "title": "more info",
-                      "type": "web_url",
-                      "url": "https://www.moovrika.com/m/4082",
-                      "webview_height_ratio": "tall"
-                    },
-                    {
-                      "title": "View trailer",
-                      "type": "web_url",
-                      "url": "https://www.moovrika.com/m/4082",
-                      "webview_height_ratio": "tall"
-                    }
-                  ]
-                },
-                {
-                  "title": "Resident Evil: The Final Chapter (2017)",
-                  "image_url": "https://www.moovrika.com/ext/makeimg.php?tbl=movies&id=4167&img=1&type=image&movie=Resident+Evil+The+Final+Chapter&fs=400",
-                  "subtitle": "Resident Evil: The Final Chapter is an upcoming science fiction action horror film written and directed by Paul W. S. Anderson. It is the sequel to Resident Evil: Retribution (2012), and will be the sixth and final installment in the Resident Evil film series, which is very loosely based on the Capcom survival horror video game series Resident Evil.",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://www.moovrika.com/m/4167",
-                    "webview_height_ratio": "tall"
-                  },
-                  "buttons": [
-                    {
-                      "title": "more info",
-                      "type": "web_url",
-                      "url": "https://www.moovrika.com/m/4082",
-                      "webview_height_ratio": "tall"
-                    }
-                  ]
-                }
-              ]
-            }
-
+        "speech": "",
+        "messages": [
+          {
+            "type": 1,
+            "platform": "facebook",
+            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
+            "subtitle": "Product Recommendations",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$",
+            "buttons": [
+              {
+                "text": "Button 1",
+                "postback": "postback 1"
+              },
+              {
+                "text": "Button 2",
+                "postback": "postback 2"
+              }
+            ]
+          },
+          {
+            "type": 0,
+            "speech": "",
+            "platform": "facebook",
+            "title": "Title2",
+            "subtitle": "Title2",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$",
+            "buttons": [
+              {
+                "text": "Button 1",
+                "postback": "postback 1"
+              },
+              {
+                "text": "Button 2",
+                "postback": "postback 2"
+              }
+            ]
           }
-
-        },
-        "kik": {
-          "type": "",
-          "body": ""
-        },
-        "slack": {
-          "text": "",
-          "attachments": []
-        },
-        "telegram": {
-          "text": ""
-        }
+        ]
       });
     }
   });
