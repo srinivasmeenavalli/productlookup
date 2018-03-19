@@ -29,11 +29,54 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": " Ascena Product Recommendations",
-        "displayText": " Ascena Product Recommendations",
-        "source": "apiai-onlinestore-search"
-                
-      });
+        "speech": "Here are the Product Recommendations",
+        "messages": [
+            {
+                "type": 0,
+                "platform": "facebook",
+                "speech": "Here are the Product Recommendations"
+            },
+            {
+                "type": 4,
+                "platform": "facebook",
+                "payload": {
+                    "facebook": {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [
+                                    {
+                                        "title":"WelcometoPeter'\''sHats",
+                                        "image_url":"https://petersfancybrownhats.com/company_image.png",
+                                        "subtitle":"We'\''vegottherighthatforeveryone.",
+                                        "default_action": {
+                                            "type":"web_url",
+                                            "url":"https://peterssendreceiveapp.ngrok.io/view?item=103",
+                                            "webview_height_ratio":"tall",
+                                            "fallback_url":"https://peterssendreceiveapp.ngrok.io/"
+                                        },
+                                        "buttons": [
+                                            {
+                                                "type":"web_url",
+                                                "url":"https://petersfancybrownhats.com",
+                                                "title":"ViewWebsite"
+                                            },
+                                            {
+                                                "type":"postback",
+                                                "title":"StartChatting",
+                                                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    });
     }
   });
 
