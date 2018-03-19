@@ -30,29 +30,63 @@ restService.post("/webhook", function (req, res) {
       console.log("result" + result.templateTypes);
       return res.json({
         "speech": "",
-        "messages": [
-          {
-            "type": 1,
-            "platform": "facebook",
-            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
-            "subtitle": "Product Recommendations",
-            "imageUrl": "https://www.lanebryant.com/home",
-            "buttons": [
-              {
-                "text": "Button 1",
-                "postback": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$"
-              },
-              {
-                "text": "Button 2",
-                "postback": "postback 2"
-              }
-            ]
-          },
-          {
-            "type": 0,
-            "speech": ""
+        "message": {
+          "attachment": {
+            "type": "template",
+            "payload": {
+              "template_type": "generic",
+              "elements": [
+                {
+                  "title": "Welcome!",
+                  "image_url": "https://petersfancybrownhats.com/company_image.png",
+                  "subtitle": "We have the right hat for everyone.",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "messenger_extensions": false,
+                    "webview_height_ratio": "tall",
+                    "fallback_url": "https://petersfancybrownhats.com/"
+                  },
+                  "buttons": [
+                    {
+                      "type": "web_url",
+                      "url": "https://petersfancybrownhats.com",
+                      "title": "View Website"
+                    }, {
+                      "type": "postback",
+                      "title": "Start Chatting",
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                    }
+                  ]
+                },
+                {
+                  "title": "Welcome!",
+                  "image_url": "https://petersfancybrownhats.com/company_image.png",
+                  "subtitle": "We have the right hat for everyone.",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "messenger_extensions": false,
+                    "webview_height_ratio": "tall",
+                    "fallback_url": "https://petersfancybrownhats.com/"
+                  },
+                  "buttons": [
+                    {
+                      "type": "web_url",
+                      "url": "https://petersfancybrownhats.com",
+                      "title": "View Website"
+                    }, {
+                      "type": "postback",
+                      "title": "Start Chatting",
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                    }
+                  ]
+                }
+              ]
+            }
           }
-        ]
+        }
+
       });
     }
   });
