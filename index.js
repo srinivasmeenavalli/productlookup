@@ -29,50 +29,28 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": "Here are the Product Recommendations1",
+        "speech": "Here are the Product Recommendations",
         "messages": [
-            
-            {
-                "type": 4,
-                "platform": "facebook",
-                "payload": {
-                    "facebook": {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": [
-                                    {
-                                        "title":"WelcometoPeter'\''sHats",
-                                        "image_url":"https://petersfancybrownhats.com/company_image.png",
-                                        "subtitle":"We'\''vegottherighthatforeveryone.",
-                                        "default_action": {
-                                            "type":"web_url",
-                                            "url":"https://peterssendreceiveapp.ngrok.io/view?item=103",
-                                            "webview_height_ratio":"tall",
-                                            "fallback_url":"https://peterssendreceiveapp.ngrok.io/"
-                                        },
-                                        "buttons": [
-                                            {
-                                                "type":"web_url",
-                                                "url":"https://petersfancybrownhats.com",
-                                                "title":"ViewWebsite"
-                                            },
-                                            {
-                                                "type":"postback",
-                                                "title":"StartChatting",
-                                                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
+          {
+            "type": 0,
+            "platform": "facebook",
+            "speech": "Here are the Product Recommendations",
+            "title": "This is a card",
+            "subtitle": "This is a card subtitle",
+            "imageUrl": "https://card.com/this-is-a-card",
+            "buttons": [
+              {
+                "text": "Button 1",
+                "postback": "postback 1"
+              },
+              {
+                "text": "Button 2",
+                "postback": "postback 2"
+              }
+            ]
+          }
         ]
-    });
+      });
     }
   });
 
@@ -84,7 +62,7 @@ function getCall(req, res, callback) {
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 
   const https = require("https");
-  
+
   // options
   var options = {
     host: 'www.lanebryant.com',
