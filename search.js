@@ -26,9 +26,13 @@ restService.post("/webhook", function (req, res) {
   var result = "";
   getCall(req, res, function (result) {
     if (result) {
-      console.log("result" + result.templateTypes);
+      console.log("result" + result.itemDetails.mktTitle);
       return res.json({
-        "contents": result.contents        
+        productId: result.itemDetails.productId,
+        mktTitle: result.itemDetails.mktTitle,
+        salePriceMax: result.itemDetails.salePriceMax,
+        rating: result.itemDetails.rating,
+        reviewCount: result.itemDetails.reviewCount
       });
     }
   });
@@ -44,8 +48,8 @@ function getCall(req, res, callback) {
   
   // options
   var options = {
-    host: 'www.lanebryant.com',
-    path: '/lanebryant/clp/?N=11286&format=json'
+    host: 'btm-atg-jst-prd.ascenaretail.com',
+    path: '/rest/model/com/ascena/rest/actor/ProductActor/itemDetails?productId=7771399&stockonHandFilter=true'
   }
 
   https.get(options, res => {
