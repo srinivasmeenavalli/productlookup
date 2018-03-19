@@ -29,8 +29,8 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": "Hello",
-        "displayText": "Hello",
+        "speech": result,
+        "displayText": result,
         "source": "apiai-onlinestore-search"
                 
       });
@@ -49,7 +49,7 @@ function getCall(req, res, callback) {
   // options
   var options = {
     host: 'www.lanebryant.com',
-    path: '/lanebryant/clp/?N=11286&format=json'
+    path: '/fast-lane/amazing-lace/P-11286'
   }
 
   https.get(options, res => {
@@ -59,7 +59,7 @@ function getCall(req, res, callback) {
       body += data;
     });
     res.on("end", () => {
-      body = JSON.parse(body);
+      //body = JSON.parse(body);
       callback(body);
     });
   });
