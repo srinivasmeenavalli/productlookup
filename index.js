@@ -32,7 +32,7 @@ restService.post("/webhook", function (req, res) {
         "speech": "",
         "messages": [
             {
-                "type": 4,
+                "type": 0,
                 "platform": "facebook",
                 "payload": {
                     "facebook": {
