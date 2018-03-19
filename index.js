@@ -29,7 +29,7 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       var promoText = result.contents[0].HeaderContent[0].contents[0].contents[0].contents[0].freeFormContent;
-
+      console.log(promoText);
       return res.json({
 
         "data": {
@@ -40,7 +40,7 @@ restService.post("/webhook", function (req, res) {
                 "template_type": "list",
                 "elements": [
                   {
-                    "title": promoText,
+                    "title": "Hello world",
                     "image_url": "https://xvir.github.io/img/apiai.png",
                     "subtitle": "See all our colors",
                     "default_action": {
