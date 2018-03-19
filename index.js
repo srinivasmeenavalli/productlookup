@@ -30,29 +30,49 @@ restService.post("/webhook", function (req, res) {
       console.log("result" + result.templateTypes);
       return res.json({
         "speech": "",
-        "messages": [
-          {
-            "type": 1,
-            "platform": "facebook",
-            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
-            "subtitle": "Product Recommendations",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$",
-            "buttons": [
-              {
-                "text": "Button 1",
-                "postback": "postback 1"
-              },
-              {
-                "text": "Button 2",
-                "postback": "postback 2"
-              }
-            ]
-          },
-          {
-            "type": 0,
-            "speech": ""
+        "facebook": {
+          "attachment": {
+            "type": "template",
+            "payload": {
+              "template_type": "list",
+              "elements": [
+                {
+                  "title": "Classic T-Shirt Collection",
+                  "image_url": "https://xvir.github.io/img/apiai.png",
+                  "subtitle": "See all our colors",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://xvir.github.io/"
+                  
+                  },
+                  "buttons": [
+                    {
+                      "title": "View",
+                      "type": "web_url",
+                      "url": "https://xvir.github.io/"
+                    }
+                  ]
+                },
+                {
+                  "title": "Classic T-Shirt Collection",
+                  "image_url": "https://xvir.github.io/img/apiai.png",
+                  "subtitle": "See all our colors",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "http://xvir.github.io/"
+                  },
+                  "buttons": [
+                    {
+                      "title": "View",
+                      "type": "web_url",
+                      "url": "https://xvir.github.io/"
+                    }
+                  ]
+                }
+              ]
+            }
           }
-        ]
+        } 
       });
     }
   });
