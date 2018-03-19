@@ -28,55 +28,47 @@ restService.post("/webhook", function (req, res) {
   getCall(req, res, function (result) {
     if (result) {
       console.log("result" + result.templateTypes);
-      return res.json({
-        "speech": "",
-                "messages": [
-                    {
-                        "type": 0,
-                        "platform": "facebook",
-                        "speech": "Hello"
-                    },
-                    {
-                        "type": 4,
-                        "platform": "facebook",
-                        "payload": {
-                            "facebook": {
-                                "attachment": {
-                                    "type": "template",
-                                    "payload": {
-                                        "template_type": "generic",
-                                        "elements": [
-                                            {
-                                                "title":"WelcometoPeter'\''sHats",
-                                                "image_url":"https://petersfancybrownhats.com/company_image.png",
-                                                "subtitle":"We'\''vegottherighthatforeveryone.",
-                                                "default_action": {
-                                                    "type":"web_url",
-                                                    "url":"https://peterssendreceiveapp.ngrok.io/view?item=103",
-                                                    "webview_height_ratio":"tall",
-                                                    "fallback_url":"https://peterssendreceiveapp.ngrok.io/"
-                                                },
-                                                "buttons": [
-                                                    {
-                                                        "type":"web_url",
-                                                        "url":"https://petersfancybrownhats.com",
-                                                        "title":"ViewWebsite"
-                                                    },
-                                                    {
-                                                        "type":"postback",
-                                                        "title":"StartChatting",
-                                                        "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]         
-      });
+      return res.json(
+        {
+          "message": {
+              "attachment": {
+                  "payload": {
+                      "elements": [
+                          {
+                              "buttons": [
+                                  {
+                                      "title": "show website",
+                                      "type": "web_url",
+                                      "url": "https://google.com"
+                                  },
+                                  {
+                                      "payload": "sample payload",
+                                      "title": "Hi There",
+                                      "type": "postback"
+                                  }
+                              ],
+                              "default_action": {
+                                  "fallback_url": "https://www.google.com/",
+                                  "messenger_extensions": true,
+                                  "type": "web_url",
+                                  "url": "https://www.google.com/",
+                                  "webview_height_ratio": "tall"
+                              },
+                              "image_url": "https://s3-ap-southeast-1.amazonaws.com/primary-4495.png",
+                              "subtitle": "Sample Sub Title",
+                              "title": "Sample Title"
+                          }
+                      ],
+                      "template_type": "generic"
+                  },
+                  "type": "template"
+              }
+          },
+          "recipient": {
+              "id": "988459377921053"
+          }
+          }
+      );
     }
   });
 
