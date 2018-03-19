@@ -35,15 +35,8 @@ restService.post("/webhook", function (req, res) {
             "type": 1,
             "platform": "facebook",
             "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
-            "top_element_style": "compact",
             "subtitle": "Product Recommendations",
             "imageUrl": "https://www.lanebryant.com/content/real-women-dollars?intid=ct_shoes_b1_RWDredeem_20180316",
-            "elements": [
-              {
-                 "media_type": "image|video",
-                 "attachment_id": "https://www.lanebryant.com/content/real-women-dollars?intid=ct_shoes_b1_RWDredeem_20180316"
-              }
-           ],
             "buttons": [
               {
                 "text": "Button 1",
