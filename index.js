@@ -29,8 +29,8 @@ restService.post("/webhook", function (req, res) {
     if (result) {
       console.log("result" + result.templateTypes);
       return res.json({
-        "speech": result.contents,
-        "displayText": result.contents,
+        "speech": "Hello",
+        "displayText": "Hello",
         "source": "apiai-onlinestore-search"
                 
       });
