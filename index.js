@@ -37,6 +37,7 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
+            "speech": "",
             "title": recordattr1.productDisplayName[0] ,
             "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
@@ -56,9 +57,11 @@ restService.post("/webhook", function (req, res) {
               }
             ]
           },
+          
           {
-            "type": 1,
+            "type": 2,
             "platform": "facebook",
+            "speech": "",
             "title": recordattr1.productDisplayName[0] ,
             "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
@@ -95,7 +98,7 @@ function getCall(req, res, callback) {
   // options
   var options = {
     host: 'www.lanebryant.com',
-    path: '/lanebryant/search/?Ntt=shirts&format=json'
+    path: '/lanebryant/search/?Ntt=ankle%20boot&format=json'
   }
 
   https.get(options, res => {
