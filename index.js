@@ -37,19 +37,19 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
-            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
-            "subtitle": "Product Recommendations",
+            "title": recordattr1.productDisplayName[0] ,
+            "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
+            + "\n Rivuews:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            //"imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/031918-hp-sub-allie?$contentJPG$",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$small$",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
                   + "\n Rivuews:" + recordattr1['product.productReviewCount'],
                 "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
                 "type": "web_url",
-                "url": recordattr1['product.seoUrl'],
+                "url": 'www.lanebryant.com'+recordattr1['product.seoUrl'],
                 "messenger_extensions": true,
                 "webview_height_ratio": "full",
                 "postback": ""
@@ -59,7 +59,7 @@ restService.post("/webhook", function (req, res) {
                   + "\n Rivuews:" + recordattr2['product.productReviewCount'],
                 "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
                 "type": "web_url",
-                "url": recordattr2['product.seoUrl'],
+                "url": 'www.lanebryant.com'+recordattr2['product.seoUrl'],
                 "messenger_extensions": true,
                 "webview_height_ratio": "full",
                 "postback": ""
@@ -69,7 +69,7 @@ restService.post("/webhook", function (req, res) {
                   + "\n Rivuews:" + recordattr1['product.productReviewCount'],
                 "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
                 "type": "web_url",
-                "url": recordattr1['product.seoUrl'],
+                "url": 'www.lanebryant.com'+recordattr1['product.seoUrl'],
                 "messenger_extensions": true,
                 "webview_height_ratio": "full",
                 "postback": ""
