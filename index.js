@@ -43,7 +43,7 @@ restService.post("/webhook", function (req, res) {
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$small$",
+            "imageUrl": "//lanebryant.scene7.com/is/image/lanebryantProdATG/349072_0000000628?$small$",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
@@ -59,7 +59,7 @@ restService.post("/webhook", function (req, res) {
           },
           
           {
-            "type": 2,
+            "type": 1,
             "platform": "facebook",
             "speech": "",
             "title": recordattr1.productDisplayName[0] ,
@@ -67,7 +67,7 @@ restService.post("/webhook", function (req, res) {
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$small$",
+            "imageUrl": "//lanebryant.scene7.com/is/image/lanebryantProdATG/310939_0000009385?$small$",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
