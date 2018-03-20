@@ -28,29 +28,35 @@ restService.post("/webhook", function (req, res) {
   getCall(req, res, function (result) {
     if (result) {
       console.log("result" + result.templateTypes);
-      var promoText = result.contents[0].HeaderContent[0].contents[0].contents[0].contents[0].freeFormContent;
-      console.log(promoText);
+      var displayName1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes.productDisplayName[0];
+      console.log(displayName1);
+      var displayName2 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[1].attributes.productDisplayName[0];
+      
       return res.json({
-        "data": {
-          "facebook": {
-              "text": "Pick a color:",
-              "quick_replies": [
-                  {
-                      "content_type": "text",
-                      "title": "Red",
-                       "payload": {
-                "url": "https://rockets.chatfuel.com/assets/video.mp4"
+        "speech": "",
+        "messages": [
+          {
+            "type": 1,
+            "platform": "facebook",
+            "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
+            "subtitle": "Product Recommendations",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$",
+            "buttons": [
+              {
+                "text": displayName1,
+                "postback": "postback 1"
+              },
+              {
+                "text": displayName2,
+                "postback": "postback 2"
               }
-                  },
-                  {
-                      "content_type": "text",
-                      "title": "Green",
-                      "payload": "green"
-                  }
-              ]
+            ]
+          },
+          {
+            "type": 0,
+            "speech": ""
           }
-      }
-	  
+        ]
       });
     }
   });
@@ -67,7 +73,7 @@ function getCall(req, res, callback) {
   // options
   var options = {
     host: 'www.lanebryant.com',
-    path: '/lanebryant/clp/?N=11286&format=json'
+    path: '/lanebryant/search/?Ntt=shirts&format=json'
   }
 
   https.get(options, res => {
