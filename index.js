@@ -42,7 +42,7 @@ restService.post("/webhook", function (req, res) {
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$large$&wid=150&hei=150",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$large$&wid=170&hei=100",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
@@ -64,7 +64,7 @@ restService.post("/webhook", function (req, res) {
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/239759_0000019850?$large$&wid=150&hei=150",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/239759_0000019850?$large$&wid=170&hei=100",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
