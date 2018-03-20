@@ -37,7 +37,7 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
-            "speech": "",
+            
             "title": recordattr1.productDisplayName[0] ,
             "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
             + "\n Rivuews:" + recordattr1['product.productReviewCount'],
@@ -57,9 +57,13 @@ restService.post("/webhook", function (req, res) {
               }
             ]
           },
-          
           {
-            "type": 1,
+            "type": 0,
+            "platform": "facebook",
+
+          },
+          {
+            "type": 2,
             "platform": "facebook",
             "speech": "",
             "title": recordattr1.productDisplayName[0] ,
