@@ -28,9 +28,8 @@ restService.post("/webhook", function (req, res) {
   getCall(req, res, function (result) {
     if (result) {
       console.log("result" + result.templateTypes);
-      var displayName1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes.productDisplayName[0];
-      console.log(displayName1);
-      var displayName2 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[1].attributes.productDisplayName[0];
+      var recordattr1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes;
+      var recordattr2 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[1].attributes;
       
       return res.json({
         "speech": "",
@@ -40,15 +39,38 @@ restService.post("/webhook", function (req, res) {
             "platform": "facebook",
             "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
             "subtitle": "Product Recommendations",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335_Back?$large$",
+            //"imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/031918-hp-sub-allie?$contentJPG$",
             "buttons": [
               {
-                "text": displayName1,
-                "postback": "postback 1"
+                "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
+                  + "\n Rivuews:" + recordattr1['product.productReviewCount'],
+                "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+                "type": "web_url",
+                "url": recordattr1['product.seoUrl'],
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "postback": ""
               },
               {
-                "text": displayName2,
-                "postback": "postback 2"
+                "text": recordattr2.productDisplayName[0] + "\n Rating:" + recordattr2['product.productRating']
+                  + "\n Rivuews:" + recordattr2['product.productReviewCount'],
+                "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+                "type": "web_url",
+                "url": recordattr2['product.seoUrl'],
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "postback": ""
+              },
+              {
+                "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
+                  + "\n Rivuews:" + recordattr1['product.productReviewCount'],
+                "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+                "type": "web_url",
+                "url": recordattr1['product.seoUrl'],
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "postback": ""
               }
             ]
           },
