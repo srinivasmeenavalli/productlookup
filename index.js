@@ -60,7 +60,7 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
-            "title": recordattr2.productDisplayName,
+            "title": recordattr2.productDisplayName[0],
             "subtitle": recordattr2.productDisplayName[0] + "\n Rating:" + recordattr2['product.productRating']
               + "\n Reviews Count:" + recordattr2['product.productReviewCount'],
             "template_type": "list",
@@ -82,7 +82,7 @@ restService.post("/webhook", function (req, res) {
           {
             "type": 1,
             "platform": "facebook",
-            "title": recordattr3.productDisplayName,
+            "title": recordattr3.productDisplayName[0],
             "subtitle": recordattr3.productDisplayName[0] + "\n Rating:" + recordattr3['product.productRating']
               + "\n Reviews Count:" + recordattr3['product.productReviewCount'],
             "template_type": "list",
