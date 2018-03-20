@@ -30,7 +30,8 @@ restService.post("/webhook", function (req, res) {
       console.log("result" + result.templateTypes);
       var recordattr1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes;
       var recordattr2 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[1].attributes;
-      
+      var recordattr3 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[2].attributes;
+
       return res.json({
         "speech": "",
         "messages": [
@@ -38,44 +39,68 @@ restService.post("/webhook", function (req, res) {
             "type": 1,
             "platform": "facebook",
             "title": recordattr1.productDisplayName[0] ,
-            "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
-            + "\n Rivuews:" + recordattr1['product.productReviewCount'],
+            "subtitle": recordattr1['product.description'] + "\n Rating:" + recordattr1['product.productRating']
+            + "\n Reviews Count:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$large$&wid=170&hei=100",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/350328_0000003916?$large$&wid=370&hei=90",
             "buttons": [
               {
                 "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
                   + "\n Rivuews:" + recordattr1['product.productReviewCount'],
                 "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
                 "type": "web_url",
-                "url": 'www.lanebryant.com'+recordattr1['product.seoUrl'],
+                "url": "www.lanebryant.com"+recordattr1['product.seoUrl'],
                 "messenger_extensions": true,
                 "webview_height_ratio": "full",
-                "postback": ""
+                "postback": "www.lanebryant.com"+recordattr1['product.seoUrl']
               }
             ]
           },
           {
             "type": 1,
             "platform": "facebook",
-            "title": recordattr1.productDisplayName[0] ,
-            "subtitle": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
-            + "\n Rivuews:" + recordattr1['product.productReviewCount'],
+            "title": recordattr2.productDisplayName[0] ,
+            "subtitle": recordattr2['product.description'] + "\n Rating:" + recordattr2['product.productRating']
+            + "\n Reviews Count:" + recordattr2['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/239759_0000019850?$large$&wid=170&hei=100",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/239759_0000019850?$large$&wid=370&hei=100",
             "buttons": [
               {
-                "text": recordattr1.productDisplayName[0] + "\n Rating:" + recordattr1['product.productRating']
-                  + "\n Rivuews:" + recordattr1['product.productReviewCount'],
+                "text": recordattr2.productDisplayName[0] + "\n Rating:" + recordattr2['product.productRating']
+                  + "\n Rivuews:" + recordattr2['product.productReviewCount'],
                 "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
                 "type": "web_url",
-                "url": 'www.lanebryant.com'+recordattr1['product.seoUrl'],
+                "url": "www.lanebryant.com"+recordattr2['product.seoUrl'],
                 "messenger_extensions": true,
                 "webview_height_ratio": "full",
-                "postback": ""
+                "postback": "www.lanebryant.com"+recordattr2['product.seoUrl']
+              },
+              
+            ]
+          },
+          {
+            "type": 1,
+            "platform": "facebook",
+            "title": recordattr3.productDisplayName[0] ,
+            "subtitle": recordattr3['product.description'] + "\n Rating:" + recordattr3['product.productRating']
+            + "\n Reviews Count:" + recordattr3['product.productReviewCount'],
+            "template_type": "list",
+            "top_element_style": "full",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/239759_0000019850?$large$&wid=370&hei=100",
+            "buttons": [
+              {
+                "text": recordattr3.productDisplayName[0] + "\n Rating:" + recordattr3['product.productRating']
+                  + "\n Rivuews:" + recordattr3['product.productReviewCount'],
+                "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+                "type": "web_url",
+                "url": "www.lanebryant.com"+recordattr3['product.seoUrl'],
+                "messenger_extensions": true,
+                "webview_height_ratio": "full",
+                "postback": "www.lanebryant.com"+recordattr3['product.seoUrl']
               }
+              
             ]
           }
         ]
