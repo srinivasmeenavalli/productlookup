@@ -57,10 +57,6 @@ restService.post("/webhook", function (req, res) {
             ]
           },
           {
-            "type": 0,
-            "speech": ""
-          },
-          {
             "type": 1,
             "platform": "facebook",
             "title": recordattr1.productDisplayName[0] ,
