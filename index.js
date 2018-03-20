@@ -43,7 +43,7 @@ restService.post("/webhook", function (req, res) {
               + "\n Reviews Count:" + recordattr1['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/"+recordattr3['sku.imageURL'][0]+"?$large$&wid=490&hei=380",            
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/"+recordattr1['sku.imageURL'][0]+"?$large$&wid=490&hei=380",            
             "buttons": [
               {
                 "text": "Suggestions",                
@@ -64,7 +64,7 @@ restService.post("/webhook", function (req, res) {
               + "\n Reviews Count:" + recordattr2['product.productReviewCount'],
             "template_type": "list",
             "top_element_style": "full",
-            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/"+recordattr3['sku.imageURL'][0]+"?$large$&wid=490&hei=380",
+            "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/"+recordattr2['sku.imageURL'][0]+"?$large$&wid=490&hei=380",
             "buttons": [
               {
                 "text": "Suggestions",                
