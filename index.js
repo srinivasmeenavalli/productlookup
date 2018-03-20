@@ -39,6 +39,8 @@ restService.post("/webhook", function (req, res) {
             "platform": "facebook",
             "title": "MESH SLEEVE SCUBA FIT & FLARE DRESS",
             "subtitle": "Product Recommendations",
+            "template_type": "list",
+            "top_element_style": "full",
             //"imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
             "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/031918-hp-sub-allie?$contentJPG$",
             "buttons": [
@@ -49,7 +51,7 @@ restService.post("/webhook", function (req, res) {
                 "type": "web_url",
                 "url": recordattr1['product.seoUrl'],
                 "messenger_extensions": true,
-                "webview_height_ratio": "tall",
+                "webview_height_ratio": "full",
                 "postback": ""
               },
               {
@@ -59,7 +61,7 @@ restService.post("/webhook", function (req, res) {
                 "type": "web_url",
                 "url": recordattr2['product.seoUrl'],
                 "messenger_extensions": true,
-                "webview_height_ratio": "tall",
+                "webview_height_ratio": "full",
                 "postback": ""
               },
               {
@@ -69,7 +71,7 @@ restService.post("/webhook", function (req, res) {
                 "type": "web_url",
                 "url": recordattr1['product.seoUrl'],
                 "messenger_extensions": true,
-                "webview_height_ratio": "tall",
+                "webview_height_ratio": "full",
                 "postback": ""
               }
             ]
