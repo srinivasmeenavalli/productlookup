@@ -7,10 +7,10 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "circular-json": "^0.5.1",
     "express": "^4.13.3",
     "ssl-root-cas": "^1.2.5"
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/srinivasmeenavalli/chatbotai.git"
