@@ -27,7 +27,8 @@ restService.post("/webhook", function (req, res) {
       
   console.log(jsonresp);
   if(!!req.body.result.metadata.intentName){
-    console.log('intentName='+req.body.result.metadata.intentName);  
+    var intentName=req.body.result.metadata.intentName;
+    console.log('intentName='+intentName);  
     if(intentName == 'Order_Status'){
       console.log("Handle Order");
     }
