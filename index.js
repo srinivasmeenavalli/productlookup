@@ -25,7 +25,7 @@ restService.post("/webhook", function (req, res) {
   var CircularJSON = require('circular-json');
   var jsonresp = CircularJSON.stringify(req);
 
-  console.log(jsonresp);
+  //console.log(jsonresp);
   if (req.body.result){
 
     if (!!req.body.result.metadata.intentName) {
