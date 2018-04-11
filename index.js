@@ -26,8 +26,13 @@ restService.post("/webhook", function (req, res) {
       var jsonresp = CircularJSON.stringify(req);
       
   console.log(jsonresp);
-   
-  //console.log('intentName='+req.body.result.metadata.intentName);  
+  if(!!req.body.result.metadata.intentName){
+    console.log('intentName='+req.body.result.metadata.intentName);  
+    if(intentName == 'Order_Status'){
+      console.log("Handle Order");
+    }
+  }
+  
     
   
   var result = "";
