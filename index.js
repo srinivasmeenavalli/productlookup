@@ -22,7 +22,10 @@ restService.post("/webhook", function (req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   //let action = req.body.result.action; 
-  //console.log('action='+action);  
+  
+  console.log('query='+req.body.resolvedQuery);
+  console.log('intentName='+req.body.resolvedQueryreq.body.result.metadata.intentName);  
+    
   var parameters = req.body.json;
   var result = "";
   getCall(req, res, function (result) {
@@ -34,6 +37,8 @@ restService.post("/webhook", function (req, res) {
 
       return res.json({
         "speech": "",
+        "imageUrl": "http://lanebryant.scene7.com/is/image/lanebryantProdATG/351047_0000008335?$medium$",
+
         "messages": [
           {
             "type": 1,
