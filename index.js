@@ -27,7 +27,10 @@ restService.post("/webhook", function (req, res) {
   //console.log('req='+req);
   console.log('request='+req);
   var parameters = req.body.json;
-  console.log('parameters='+JSON.parse(req));
+   for(var item in req){
+    
+    console.log('key='+req[item]);
+  }
   //console.log('intentName='+req.body.result.metadata.intentName);  
     
   
