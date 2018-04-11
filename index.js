@@ -23,8 +23,9 @@ restService.post("/webhook", function (req, res) {
       : "Seems like some problem. Speak again.";
   //let action = req.body.result.action; 
   
-  console.log('query='+req.body.resolvedQuery);
-  console.log('intentName='+req.body.resolvedQueryreq.body.result.metadata.intentName);  
+  console.log('req='+req);
+  //console.log('query='+req.body.resolvedQuery);
+  //console.log('intentName='+req.body.resolvedQueryreq.body.result.metadata.intentName);  
     
   var parameters = req.body.json;
   var result = "";
