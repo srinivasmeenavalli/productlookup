@@ -25,10 +25,12 @@ restService.post("/webhook", function (req, res) {
   
   
   //console.log('req='+req);
-  console.log('result='+req.body.result);
+  console.log('request='+req);
+  var parameters = req.body.json;
+  console.log('parameters='+parameters);
   //console.log('intentName='+req.body.result.metadata.intentName);  
     
-  var parameters = req.body.json;
+  
   var result = "";
   getCall(req, res, function (result) {
     if (result) {
