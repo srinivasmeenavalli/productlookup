@@ -25,6 +25,7 @@ restService.post("/webhook", function (req, res) {
   var CircularJSON = require('circular-json');
   var jsonresp = CircularJSON.stringify(req);
 
+  
   //console.log(jsonresp);
   if (req.body.result){
 
@@ -38,9 +39,109 @@ restService.post("/webhook", function (req, res) {
       if (intentName == 'Order_Status - yes' && action == 'Order_Status_yes') {
         console.log("Handle Order");
         return res.json(
-          '{ "status": "success", "data": { "cartItems": [{ "colorHEXCode": "", "colorName": "Multi Color", "associatedId": "", "eligibleForGWP": "", "unitPrice": "495.00", "referenceNum": "600093557", "productType": "egiftcard", "id": "600147201", "colorImageURL": "//lanebryant.scene7.com/is/image/lanebryantProdATG/600093557_0000012527_swatch", "description": "", "gwpMessage": "Free Gift", "name": "E giftcard LB", "skuId": "600147201", "promoAppliedAmount": 0, "quantity": 1, "gwpLink": "", "productLink": "/prd-EGift-Card", "totalPrice": "495.00", "outOfStockMsg": "", "orderDetails": { "secondArrivalEst": "", "isItemReturnable": false, "reviewURL": "/prd-EGift-Card#skuId/600147201/review_submit", "soldOut": false, "firstArrivalEst": "03/12/2018", "trackingURL": "", "shippingStatus": "Shipped" }, "currencyCode": "$", "maxQuantity": "", "productId": "600093557", "size": "Electronic Gift Card", "originalPrice": "495.00", "email": "monroeblount@yahoo.com", "notifications": "{}", "imageALTText": "E giftcard LB", "skuStatus": "", "invMessage": "", "dArgs": "", "imageURL": "//lanebryant.scene7.com/is/image/lanebryantProdATG/600093557_0000012527" }], "brandDollarMesg": { "message": "", "link": "" }, "cartSummary": { "payPalLink": "", "numberOfItems": "", "payment": { "taxesAndDuties": "0.00", "giftCard": [], "giftWrap": "0.00", "duties": "0.00", "taxes": "0.00" }, "estmShipping": "FREE", "savings": [], "brandLoyalty": { "coupons": "", "points": "" }, "shipping": [{ "id": 1, "selected": "", "price": "", "name": "null null", "estArrival": "" }], "returnTotal": "0.00", "totalSavings": "0.00", "returnPolicy": "", "secureCheckoutLink": "", "totalPostSvng": "495.00", "totalPreSvng": "495.00" }, "returnTransactions": [], "cartGWPs": [{ "id": 1, "gwpMessage": "", "gwpLink": "", "imageURL": "", "qwpMessage": "" }] } ""}'
-
+          {  
+            "status":"success",
+            "data":{  
+               "cartItems":[  
+                  {  
+                     "colorHEXCode":"",
+                     "colorName":"Multi Color",
+                     "associatedId":"",
+                     "eligibleForGWP":"",
+                     "unitPrice":"495.00",
+                     "referenceNum":"600093557",
+                     "productType":"egiftcard",
+                     "id":"600147201",
+                     "colorImageURL":"//lanebryant.scene7.com/is/image/lanebryantProdATG/600093557_0000012527_swatch",
+                     "description":"",
+                     "gwpMessage":"Free Gift",
+                     "name":"E giftcard LB",
+                     "skuId":"600147201",
+                     "promoAppliedAmount":0,
+                     "quantity":1,
+                     "gwpLink":"",
+                     "productLink":"/prd-EGift-Card",
+                     "totalPrice":"495.00",
+                     "outOfStockMsg":"",
+                     "orderDetails":{  
+                        "secondArrivalEst":"",
+                        "isItemReturnable":false,
+                        "reviewURL":"/prd-EGift-Card#skuId/600147201/review_submit",
+                        "soldOut":false,
+                        "firstArrivalEst":"03/12/2018",
+                        "trackingURL":"",
+                        "shippingStatus":"Shipped"
+                     },
+                     "currencyCode":"$",
+                     "maxQuantity":"",
+                     "productId":"600093557",
+                     "size":"Electronic Gift Card",
+                     "originalPrice":"495.00",
+                     "email":"monroeblount@yahoo.com",
+                     "notifications":"{}",
+                     "imageALTText":"E giftcard LB",
+                     "skuStatus":"",
+                     "invMessage":"",
+                     "dArgs":"",
+                     "imageURL":"//lanebryant.scene7.com/is/image/lanebryantProdATG/600093557_0000012527"
+                  }
+               ],
+               "brandDollarMesg":{  
+                  "message":"",
+                  "link":""
+               },
+               "cartSummary":{  
+                  "payPalLink":"",
+                  "numberOfItems":"",
+                  "payment":{  
+                     "taxesAndDuties":"0.00",
+                     "giftCard":[  
+         
+                     ],
+                     "giftWrap":"0.00",
+                     "duties":"0.00",
+                     "taxes":"0.00"
+                  },
+                  "estmShipping":"FREE",
+                  "savings":[  
+         
+                  ],
+                  "brandLoyalty":{  
+                     "coupons":"",
+                     "points":""
+                  },
+                  "shipping":[  
+                     {  
+                        "id":1,
+                        "selected":"",
+                        "price":"",
+                        "name":"null null",
+                        "estArrival":""
+                     }
+                  ],
+                  "returnTotal":"0.00",
+                  "totalSavings":"0.00",
+                  "returnPolicy":"",
+                  "secureCheckoutLink":"",
+                  "totalPostSvng":"495.00",
+                  "totalPreSvng":"495.00"
+               },
+               "returnTransactions":[  
+         
+               ],
+               "cartGWPs":[  
+                  {  
+                     "id":1,
+                     "gwpMessage":"",
+                     "gwpLink":"",
+                     "imageURL":"",
+                     "qwpMessage":""
+                  }
+               ]
+            }
+         }
         );
+      
       }
     }
 }
