@@ -39,9 +39,12 @@ restService.post("/webhook", function (req, res) {
     getCall(req, res, productId, function (result) {
       if (result) {
         console.log("result=" + result.templateTypes);
-        var recordattr1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes;
-        //return result;
-        return res.json(recordattr1);
+        if(result.contents[0].MainContent[0].MainContent[0].contents[0].records[0]){
+          var recordattr1 = result.contents[0].MainContent[0].MainContent[0].contents[0].records[0].attributes;
+          //return result;
+          return res.json(recordattr1);
+        }
+        return res.json({});
       }
     });
   })
