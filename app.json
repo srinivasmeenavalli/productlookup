@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Chatbot",
-  "description": "Chatbot Node.js app using Express 4",
-  "repository": "https://github.com/srinivasmeenavalli/nodechatbot",
+  "name": "Product Lookup",
+  "description": " Product Lookup ",
+  "repository": "https://github.com/srinivasmeenavalli/productlookup",
   "logo": "",
-  "keywords": ["Chatbot", "express", "static"]
+  "keywords": ["productlookup", "express", "static"]
 }
