@@ -14,7 +14,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post("/webhook", function (req, res) {
+restService.post("/productlookup", function (req, res) {
   var speech =
     req.body.result &&
       req.body.result.parameters &&
