@@ -44,7 +44,7 @@ restService.post("/webhook", function (req, res) {
           //return result;
           return res.json(recordattr1);
         }
-        return res.json({});
+        return res.json({"error":"No Records Found for "+productId});
       }
     });
   })
