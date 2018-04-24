@@ -2,9 +2,9 @@
   "name": "ProductLookup",
   "version": "0.2.0",
   "description": "Product Lookup",
-  "main": "index.js",
+  "main": "productLookup.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node productLookup.js"
   },
   "dependencies": {
     "circular-json": "^0.5.1",
